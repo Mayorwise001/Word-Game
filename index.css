@@ -1,7 +1,19 @@
 *, *::before, *::after{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
 
 body{
     background: linear-gradient(to right, rgba(255,250,210,0.7), rgba(20,240,230,0.8))
@@ -16,6 +28,7 @@ body{
 .container{
     
     min-height: 70vh;
+    min-width:5vw;
     display: grid;
     grid-template-columns: repeat(5, 100px);
     grid-template-rows: minmax(120px, auto), repeat(5, 100px);
@@ -119,3 +132,57 @@ background-color: rgb(219, 193, 20);
       opacity: 0;
     }
   }
+
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11{width: 81.66%;} 
+    .container {
+        width: 0px;
+        min-height: 70vh;
+        display: grid;
+        margin-left: 170px;
+        grid-template-columns: repeat(5, 70px);
+        grid-template-rows: minmax(120px, auto), repeat(5, 100px);
+        align-content: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .container > button{
+        font-size: 5px;
+        height: 15px;
+        outline: none;
+        background-color: rgba(220,225,172,0.3);
+        border: 1px solid #7c6f6f;
+       }
+
+       .output{
+        grid-column: 1/-1;
+        background-color: rgba(0,0,0,0.75);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        word-wrap: break-word;
+        word-break: break-all;
+        padding: 10px;
+    
+    }
+    .col-12 {width: 100%;}
+  }
+ 
