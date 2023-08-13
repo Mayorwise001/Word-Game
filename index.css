@@ -164,7 +164,7 @@ background-color: rgb(219, 193, 20);
     }
 
     .container > button{
-        font-size: 5px;
+        font-size: 15px;
         height: 15px;
         outline: none;
         background-color: rgba(220,225,172,0.3);
