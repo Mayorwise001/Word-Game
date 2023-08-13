@@ -1,0 +1,121 @@
+*, *::before, *::after{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: linear-gradient(to right, rgba(255,250,210,0.7), rgba(20,240,230,0.8))
+}
+
+.title{
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(12, 18, 23);
+}
+
+.container{
+    
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto), repeat(5, 100px);
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.container > .checker{
+    grid-column: span 5;
+    background-color: rgb(50, 92, 8);
+    color: aliceblue;
+}
+
+.container > .clear{
+    background-color: rgb(117, 11, 11);
+}
+
+.container > .delete{
+    background-color: rgb(219, 193, 20);
+}
+
+.output{
+    grid-column: 1/-1;
+    background-color: rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+
+}
+
+.span-2{
+    grid-column: span 2;
+}
+
+.span-1{
+    grid-column: span 1;
+}
+
+.span-5{
+    grid-column: span 5;
+}
+
+
+.container > button{
+ font-size: 2rem;
+ outline: none;
+ background-color: rgba(220,225,172,0.3);
+ border: 1px solid #7c6f6f;
+}
+
+.container > button:hover{
+background-color: rgba(120,125,132,0.9);
+cursor: pointer;
+}
+
+.container > .next{
+background-color: rgb(219, 193, 20);
+}
+
+.questions{
+    color: rgb(233, 233, 233);
+    font-size: 55px;
+}
+
+.answer{
+    color: aliceblue;
+}
+.response{
+    color: rgb(233, 233, 233);
+    font-size: 25px;  
+}
+
+
+.correct{
+    animation: blinker 1s step-start infinite;
+    background-color: rgb(8, 114, 26);
+    font-size: 25px;
+    color: #e7e7e7;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+.wrong {
+    animation: blinker 1s step-start infinite;
+    background-color: rgb(214, 41, 10);
+    font-size: 25px;
+    color: white;
+
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
